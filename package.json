@@ -1,0 +1,19 @@
+{
+  "name": "bankapp",
+  "version": "1.0.0",
+  "description": "Javascript baking app. Developed to practive array methods",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ma1nframe/bankApp.git"
+  },
+  "author": "Anthony Daddario",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ma1nframe/bankApp/issues"
+  },
+  "homepage": "https://github.com/Ma1nframe/bankApp#readme"
+}
