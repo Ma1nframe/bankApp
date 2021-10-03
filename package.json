@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Ma1nframe/bankApp/issues"
   },
-  "homepage": "https://github.com/Ma1nframe/bankApp#readme"
+  "homepage": "https://github.com/Ma1nframe/bankApp#readme",
+  "dependencies": {
+    "parcel": "^2.0.0-rc.0"
+  }
 }
