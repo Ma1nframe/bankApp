@@ -1,6 +1,8 @@
 'use strict';
 
+/*********************/
 /***** BANK APP *****/
+/*******************/
 
 // Data
 const account1 = {
@@ -59,6 +61,48 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-/////////////////////////////////////////////////
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-////////////////////////////////////////////////
+///////////////////////////////////
+// SHOW TRANSACTION HISTORY
+///////////////////////////////////
+const displayMovements = function(movements) {
+  // Clear the initial transaction values
+  containerMovements.innerHTML = ' ';
+
+    movements.forEach(function(mov, i){
+      // let type;
+      // if(mov > 0) {
+      //   type = 'deposit';
+      // } else {
+      //   type = 'withdrawal';
+      // };
+      const type = mov > 0 ? 'deposit' : 'withdrawal';
+
+      const html = `
+      <div class="movements__row">
+      <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+      <div class="movements__value">${mov}</div>
+    </div>
+    `;
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+displayMovements(account1.movements)
+
+//////////////////////////////////////
+// CREATE USERNAME BASED ON INITIALS
+//////////////////////////////////////
+const createInitials = function(accts) {
+  // const user = 'Steven Thomas Williams'; 
+  // const userName = user.toLowerCase().split(' ');
+  // console.log(userName);
+  // const userName = user.toLowerCase().split(' ').map(n => n[0]);
+  // console.log(userName);
+  // const userName = user.toLowerCase().split(' ').map(n => n[0]).join('');
+  // console.log(userName); // Gets initials 'stw' in lower case
+  
+  accts.forEach(function(acct){
+    acct.userName = acct.owner.toLowerCase().split(' ').map(n => n[0]).join('');
+  });  
+}
+createInitials(accounts); // Creates a new accounts array with usernames based on initials included
+console.log(accounts); 
